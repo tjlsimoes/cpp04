@@ -6,7 +6,7 @@
 #    By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/10 10:42:39 by tjorge-l          #+#    #+#              #
-#    Updated: 2025/06/10 17:45:29 by tjorge-l         ###   ########.fr        #
+#    Updated: 2025/06/10 18:22:18 by tjorge-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM = rm -rf
 DEBUG_FLAGS = -g
 VFLAGS = -s --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes
 
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJS = $(SRCS:%.cpp=%.o)
 

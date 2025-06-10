@@ -6,11 +6,13 @@
 /*   By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 17:03:59 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/06/10 18:12:18 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/06/10 18:21:54 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Animal.hpp"
+# include "WrongAnimal.hpp"
+# include "WrongCat.hpp"
 # include "Dog.hpp"
 # include "Cat.hpp"
 
@@ -58,6 +60,11 @@ int	main(void)
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
+
+	std::cout << "\n--------------WrongCat tests--------------\n" << std::endl;
+	const WrongAnimal	*wrong_cat = new WrongCat();
+	std::cout << wrong_cat->getType() << " " << std::endl;
+	wrong_cat->makeSound();
 
 	delete j;
 	delete i;
