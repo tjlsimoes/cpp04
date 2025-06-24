@@ -39,6 +39,7 @@ Dog &	Dog::operator=(Dog const & rhs)
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &rhs)
 		this->_type = rhs._type;
+	// Copy Brain...
 	return (*this);
 }
 

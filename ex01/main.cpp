@@ -38,7 +38,7 @@ int	main(void)
 	// 	animal_array[i] = new Dog();
 
 	// for (int i = SIZE / 2; i < SIZE; i++)
-	// 	animal_array[i] = new Dog();
+	// 	animal_array[i] = new Cat();
 	
 	// for (int i = 0; i < SIZE; i++)
 	// 	delete animal_array[i];
@@ -54,7 +54,7 @@ int	main(void)
 	
 	delete the_dog;
 
-
+	new_dog->getIdeas(); // Shallow copy problem!!
 	Cat	*the_cat;
 	the_cat = new Cat();
 	the_cat->setIdeas("Hello, I'm a cat.");

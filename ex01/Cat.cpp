@@ -39,6 +39,9 @@ Cat &	Cat::operator=(Cat const & rhs)
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &rhs)
 		this->_type = rhs._type;
+	// Copy Brain...
+	// delete _brain;
+	// this->setIdeas(rhs.getIdeas()[0]);
 	return (*this);
 }
 
