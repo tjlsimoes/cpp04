@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 17:03:59 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/07/14 10:35:25 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/07/14 11:40:45 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,17 @@ int	main(void)
 
 	new_dog->getIdeas(); // Shallow copy problem!!
 	delete new_dog;
-	// Cat	*the_cat;
-	// the_cat = new Cat();
-	// the_cat->setIdeas("Hello, I'm a cat.");
+	Cat	*the_cat;
+	the_cat = new Cat();
+	the_cat->setIdeas("Hello, I'm a cat.");
 	// the_cat->getIdeas();
 	
-	// Cat	*new_cat(the_cat);
-	// new_cat->getIdeas();
+	Cat	*new_cat = new Cat(*the_cat);
+	delete the_cat;
+	new_cat->getIdeas();
 	
-	// delete the_cat;
-	// return (0);
+	delete new_cat;
+	return (0);
 }
 
 // Object slicing occurs when a derived class object is assigned
