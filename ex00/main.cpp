@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 17:03:59 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/06/10 18:21:54 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/07/14 11:32:55 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 # include "WrongCat.hpp"
 # include "Dog.hpp"
 # include "Cat.hpp"
-
-// Review!!!
 
 int	main(void)
 {
@@ -71,6 +69,7 @@ int	main(void)
 	delete j;
 	delete i;
 	delete meta;
+	delete wrong_cat;
 	return (0);
 }
 
