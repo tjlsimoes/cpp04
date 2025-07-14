@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 17:04:06 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/07/14 10:49:51 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/07/14 11:35:59 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Cat::Cat() : A_Animal()		// Default Constructor
 {
 	std::cout << "Cat Default constructor called" << std::endl;
 	_type = "Cat";
-	_brain = new(Brain);
+	_brain = new Brain();
 	return ;
 }
 
