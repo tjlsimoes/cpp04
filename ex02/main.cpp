@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 17:03:59 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/06/10 19:30:49 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/07/14 11:46:12 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,23 +47,25 @@ int	main(void)
 	Dog	*the_dog;
 	the_dog = new Dog();
 	the_dog->setIdeas("Hello, I'm a dog");
-	the_dog->getIdeas();
+	// the_dog->getIdeas();
 	
-	Dog	*new_dog(the_dog);
-	new_dog->getIdeas();
+	Dog	*new_dog = new Dog(*the_dog);
+	// new_dog->getIdeas();
 	
 	delete the_dog;
 
-
+	new_dog->getIdeas(); // Shallow copy problem!!
+	delete new_dog;
 	Cat	*the_cat;
 	the_cat = new Cat();
 	the_cat->setIdeas("Hello, I'm a cat.");
-	the_cat->getIdeas();
+	// the_cat->getIdeas();
 	
-	Cat	*new_cat(the_cat);
+	Cat	*new_cat = new Cat(*the_cat);
+	delete the_cat;
 	new_cat->getIdeas();
 	
-	delete the_cat;
+	delete new_cat;
 
 	// std::cout << "\n--------------Instantiate Abstract Class Attempt--------------\n" << std::endl;
 	// A_Animal	*animal;
@@ -71,12 +73,3 @@ int	main(void)
 	
 	return (0);
 }
-
-// Object slicing occurs when a derived class object is assigned
-// to a base class object by value.
-
-// const Animal k = *i; copies only the Animal portion of the Cat
-// object pointed to by i.
-// The resulting k is an Animal object, not a Cat object, so
-// k.makeSound() calls Animal::makeSound() instead of Cat::makeSound().
-// The same applies to l with the Dog object.
