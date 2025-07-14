@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+         #
+#    By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/10 10:42:39 by tjorge-l          #+#    #+#              #
-#    Updated: 2025/06/10 18:31:55 by tjorge-l         ###   ########.fr        #
+#    Updated: 2025/07/14 09:58:26 by tjorge-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -std=c++98 -Wall -Wextra -Werror
 RM = rm -rf
 
 DEBUG_FLAGS = -g
-VFLAGS = -s --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes
+VFLAGS = -s -fsanitize=address --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes
 
 SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 17:04:06 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/06/10 19:04:04 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/07/14 10:48:41 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ Brain::Brain()						// Default Constructor
 Brain::Brain(Brain const & src)		// Copy Constructor
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = src;
+	this->_ideas = new std::string[100];
+	for (int i = 0; i < 100; ++i)
+		this->_ideas[i] = src._ideas[i];
 	return ;
 }
-
 Brain::~Brain(void)
 {
 	std::cout << "Brain Destructor called" << std::endl;

@@ -1,3 +1,4 @@
 .vscode/
 ex0*/*.o
 ex0*/animals
+./animals

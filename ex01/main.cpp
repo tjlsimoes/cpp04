@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 17:03:59 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/06/10 19:09:50 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/07/14 10:35:25 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,24 +47,25 @@ int	main(void)
 	Dog	*the_dog;
 	the_dog = new Dog();
 	the_dog->setIdeas("Hello, I'm a dog");
-	the_dog->getIdeas();
+	// the_dog->getIdeas();
 	
-	Dog	*new_dog(the_dog);
-	new_dog->getIdeas();
+	Dog	*new_dog = new Dog(*the_dog);
+	// new_dog->getIdeas();
 	
 	delete the_dog;
 
 	new_dog->getIdeas(); // Shallow copy problem!!
-	Cat	*the_cat;
-	the_cat = new Cat();
-	the_cat->setIdeas("Hello, I'm a cat.");
-	the_cat->getIdeas();
+	delete new_dog;
+	// Cat	*the_cat;
+	// the_cat = new Cat();
+	// the_cat->setIdeas("Hello, I'm a cat.");
+	// the_cat->getIdeas();
 	
-	Cat	*new_cat(the_cat);
-	new_cat->getIdeas();
+	// Cat	*new_cat(the_cat);
+	// new_cat->getIdeas();
 	
-	delete the_cat;
-	return (0);
+	// delete the_cat;
+	// return (0);
 }
 
 // Object slicing occurs when a derived class object is assigned

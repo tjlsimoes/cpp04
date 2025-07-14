@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 17:04:06 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/06/10 19:05:40 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/07/14 10:49:22 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ Cat::Cat() : Animal()		// Default Constructor
 Cat::Cat(Cat const & src) : Animal()	// Copy Constructor
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = src;
+	this->_type = src._type;
+	this->_brain = new Brain(*src._brain);
 	return ;
 }
 
@@ -38,10 +39,12 @@ Cat &	Cat::operator=(Cat const & rhs)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &rhs)
+	{
 		this->_type = rhs._type;
-	// Copy Brain...
-	// delete _brain;
-	// this->setIdeas(rhs.getIdeas()[0]);
+		if (this->_brain)
+			delete this->_brain;
+		this->_brain = new Brain(*rhs._brain);
+	}
 	return (*this);
 }
 
